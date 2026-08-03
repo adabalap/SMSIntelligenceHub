@@ -27,10 +27,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Ensure Gradle Wrapper exists
+      - name: Ensure Compatible Gradle Wrapper exists
         run: |
           if [ ! -f ./gradlew ]; then
-            gradle wrapper
+            gradle wrapper --gradle-version 8.5
           fi
           chmod +x ./gradlew
 
